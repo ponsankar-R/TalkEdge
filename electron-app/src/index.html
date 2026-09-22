@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src http://localhost:5000;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalkEdge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       VIEW 1: LOGIN SCREEN
+       ═══════════════════════════════════════════════════════ -->
+  <div class="stage" id="view-login">
+
+    <!-- LEFT: hub-and-spoke capability diagram -->
+    <section class="network-panel" aria-label="TalkEdge practice skills">
+      <div class="network">
+        <svg class="connections" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path class="link" data-delay="0"   d="M50,53 Q35,36 23,20" />
+          <path class="link" data-delay="120" d="M50,53 Q65,34 79,21" />
+          <path class="link" data-delay="240" d="M50,53 Q66,68 76,83" />
+          <path class="link" data-delay="360" d="M50,53 Q34,70 25,81" />
+        </svg>
+
+        <div class="hub">
+          <svg class="hub-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6.5C4 5.12 5.12 4 6.5 4h9C16.88 4 18 5.12 18 6.5v6c0 1.38-1.12 2.5-2.5 2.5H9l-3.6 3.2c-.5.44-1.28.09-1.28-.58V15h-.12C2.9 15 2 14.1 2 12.99"
+                  stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 9c1.1 0 2 .9 2 2v4.4c0 1.1-.9 2-2 2h-.2v2.1c0 .5-.6.78-.98.45L16.4 17.4"
+                  stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="hub-title">TalkEdge</span>
+          <span class="hub-sub">practice hub</span>
+        </div>
+
+        <article class="skill skill--reading" style="--delay:160ms">
+          <span class="skill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 5.5C10.3 4.2 7.8 3.6 5 4v13.5c2.8-.4 5.3.2 7 1.5 1.7-1.3 4.2-1.9 7-1.5V4c-2.8-.4-5.3.2-7 1.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 5.5V19" stroke="currentColor" stroke-width="1.4"/></svg>
+          </span>
+          <span class="skill-label">Reading</span>
+        </article>
+
+        <article class="skill skill--listening" style="--delay:280ms">
+          <span class="skill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7 12.5v-2a5 5 0 0 1 10 0v2M7 12.5a2.5 2.5 0 1 0 0 5c1.1 0 1.7-.5 1.7-1.8v-3.2M17 12.5a2.5 2.5 0 1 1 0 5c-1.1 0-1.7-.5-1.7-1.8v-3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="skill-label">Listening</span>
+        </article>
+
+        <article class="skill skill--speaking" style="--delay:400ms">
+          <span class="skill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3Z" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 11.5a5.5 5.5 0 0 0 11 0M12 17v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </span>
+          <span class="skill-label">Speaking</span>
+        </article>
+
+        <article class="skill skill--writing" style="--delay:520ms">
+          <span class="skill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15.5 4.5 19 8l-9.7 9.7-4.1 1.1 1.1-4.1 9.2-9.2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="skill-label">Writing</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- RIGHT: login -->
+    <section class="auth-panel" aria-label="Log in to TalkEdge">
+      <form class="auth-card" id="login-form" novalidate>
+        <p class="wordmark">TalkEdge</p>
+        <h1>Welcome back</h1>
+        <p class="auth-copy">Sign in to continue your practice.</p>
+
+        <label class="field">
+          <span class="field-label">Email</span>
+          <span class="field-control">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5h16v11H4v-11Z" stroke="currentColor" stroke-width="1.3"/><path d="m4.5 7 7.5 6 7.5-6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <input id="email" name="email" type="email" placeholder="Enter email" autocomplete="username" required />
+          </span>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Password</span>
+          <span class="field-control">
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.3"/></svg>
+            <input id="password" name="password" type="password" placeholder="Enter password" autocomplete="current-password" required />
+          </span>
+        </label>
+
+        <button type="submit" id="login-btn">Log in</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="footnote">TalkEdge desktop · v1.0.0</p>
+    </section>
+
+  </div><!-- /view-login -->
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       VIEW 2: POST-LOGIN DASHBOARD (5 Modules)
+       ═══════════════════════════════════════════════════════ -->
+  <div class="dash-stage" id="view-dashboard" hidden>
+
+    <!-- Top navigation bar -->
+    <header class="dash-nav">
+      <div class="dash-nav-brand">
+        <svg class="dash-nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 6.5C4 5.12 5.12 4 6.5 4h9C16.88 4 18 5.12 18 6.5v6c0 1.38-1.12 2.5-2.5 2.5H9l-3.6 3.2c-.5.44-1.28.09-1.28-.58V15h-.12C2.9 15 2 14.1 2 12.99"
+                stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 9c1.1 0 2 .9 2 2v4.4c0 1.1-.9 2-2 2h-.2v2.1c0 .5-.6.78-.98.45L16.4 17.4"
+                stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="dash-nav-title">TalkEdge</span>
+      </div>
+      <div class="dash-nav-right">
+        <span class="dash-user-email" id="dash-user-email">user@example.com</span>
+        <button class="dash-logout-btn" id="dash-logout-btn" aria-label="Log out">
+          <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M16 17l5-5-5-5M21 12H9M13 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Log out
+        </button>
+      </div>
+    </header>
+
+    <!-- Welcome strip -->
+    <div class="dash-hero">
+      <p class="dash-greeting" id="dash-greeting">Good morning</p>
+      <h1 class="dash-headline">What would you like to practice today?</h1>
+      <p class="dash-sub">Choose a module below to get started.</p>
+    </div>
+
+    <!-- 5 Module Cards -->
+    <main class="dash-grid" aria-label="Practice modules">
+
+      <!-- Reading -->
+      <article class="mod-card mod--reading" style="--mod-delay:80ms" data-module="reading" role="button" tabindex="0" aria-label="Reading module">
+        <div class="mod-icon-wrap">
+          <svg class="mod-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5.5C10.3 4.2 7.8 3.6 5 4v13.5c2.8-.4 5.3.2 7 1.5 1.7-1.3 4.2-1.9 7-1.5V4c-2.8-.4-5.3.2-7 1.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12 5.5V19" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="mod-body">
+          <h2 class="mod-title">Reading</h2>
+          <p class="mod-desc">Improve comprehension with structured passages and exercises.</p>
+        </div>
+        <div class="mod-arrow" aria-hidden="true">→</div>
+      </article>
+
+      <!-- Listening -->
+      <article class="mod-card mod--listening" style="--mod-delay:160ms" data-module="listening" role="button" tabindex="0" aria-label="Listening module">
+        <div class="mod-icon-wrap">
+          <svg class="mod-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 12.5v-2a5 5 0 0 1 10 0v2M7 12.5a2.5 2.5 0 1 0 0 5c1.1 0 1.7-.5 1.7-1.8v-3.2M17 12.5a2.5 2.5 0 1 1 0 5c-1.1 0-1.7-.5-1.7-1.8v-3.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="mod-body">
+          <h2 class="mod-title">Listening</h2>
+          <p class="mod-desc">Sharpen your ear with audio clips, dictations and comprehension checks.</p>
+        </div>
+        <div class="mod-arrow" aria-hidden="true">→</div>
+      </article>
+
+      <!-- Speaking -->
+      <article class="mod-card mod--speaking" style="--mod-delay:240ms" data-module="speaking" role="button" tabindex="0" aria-label="Speaking module">
+        <div class="mod-icon-wrap">
+          <svg class="mod-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 15a3 3 0 0 0 3-3V7a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3Z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6.5 11.5a5.5 5.5 0 0 0 11 0M12 17v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="mod-body">
+          <h2 class="mod-title">Speaking</h2>
+          <p class="mod-desc">Build confidence with guided pronunciation and fluency drills.</p>
+        </div>
+        <div class="mod-arrow" aria-hidden="true">→</div>
+      </article>
+
+      <!-- Writing -->
+      <article class="mod-card mod--writing" style="--mod-delay:320ms" data-module="writing" role="button" tabindex="0" aria-label="Writing module">
+        <div class="mod-icon-wrap">
+          <svg class="mod-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15.5 4.5 19 8l-9.7 9.7-4.1 1.1 1.1-4.1 9.2-9.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="mod-body">
+          <h2 class="mod-title">Writing</h2>
+          <p class="mod-desc">Craft clearer sentences and essays with targeted writing tasks.</p>
+        </div>
+        <div class="mod-arrow" aria-hidden="true">→</div>
+      </article>
+
+      <!-- More -->
+      <article class="mod-card mod--more" style="--mod-delay:400ms" data-module="more" role="button" tabindex="0" aria-label="More modules">
+        <div class="mod-icon-wrap">
+          <svg class="mod-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="5" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="19" cy="12" r="1.5" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="mod-body">
+          <h2 class="mod-title">More</h2>
+          <p class="mod-desc">Explore vocabulary, grammar and additional practice resources.</p>
+        </div>
+        <div class="mod-arrow mod-arrow--more" aria-hidden="true">+</div>
+      </article>
+
+    </main>
+
+    <footer class="dash-footer">
+      <p>TalkEdge Desktop · v1.0.0</p>
+    </footer>
+
+  </div><!-- /view-dashboard -->
+
+  <script src="renderer.js"></script>
+</body>
+</html>

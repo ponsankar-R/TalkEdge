@@ -1,0 +1,17 @@
+{
+  "name": "talkedge-electron-app",
+  "version": "1.0.0",
+  "description": "EdgeTalk desktop app — intro/login screen with a built-in local server for future on-system communication features.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "electron": "^31.3.0"
+  }
+}
